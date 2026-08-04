@@ -1,0 +1,66 @@
+{
+  "$schema": "https://antigravity.google/config.json",
+  "instructions": ["AGENTS.md"],
+  "skills": {
+    "paths": [".antigravity/skills"]
+  },
+  "mcp": {
+    "re-lab": {
+      "type": "local",
+      "command": ["/home/ahmed/repos/reverse-engineering-lab/venv/bin/python", "-m", "mcp.antigravity_server"],
+      "enabled": true,
+      "timeout": 60000,
+      "environment": {
+        "PYTHONPATH": "/home/ahmed/repos/reverse-engineering-lab"
+      }
+    }
+  },
+  "agent": {
+    "re-binary": {
+      "description": "Binary analysis agent. Analyzes ELF/PE executables for structure, imports, exports, functions, strings, and security features.",
+      "mode": "subagent",
+      "permission": { "edit": "deny" }
+    },
+    "re-firmware": {
+      "description": "Firmware analysis agent. Extracts and analyzes firmware images, filesystems, embedded kernels, and bootloaders.",
+      "mode": "subagent",
+      "permission": { "edit": "deny" }
+    },
+    "re-network": {
+      "description": "Network analysis agent. Analyzes packet captures (pcap), protocols, traffic patterns, and network behavior.",
+      "mode": "subagent",
+      "permission": { "edit": "deny" }
+    },
+    "re-kernel": {
+      "description": "Kernel/OS analysis agent. Analyzes kernel modules, system calls, OS internals, and driver behavior.",
+      "mode": "subagent",
+      "permission": { "edit": "deny" }
+    },
+    "re-general": {
+      "description": "General RE orchestrator. Coordinates multi-agent analysis across binary, firmware, network, and kernel domains.",
+      "mode": "all",
+      "permission": { "edit": "deny" }
+    }
+  },
+  "permission": {
+    "bash": {
+      "python *": "allow",
+      "objdump *": "allow",
+      "readelf *": "allow",
+      "strings *": "allow",
+      "file *": "allow",
+      "hexdump *": "allow",
+      "binwalk *": "allow",
+      "tshark *": "allow",
+      "capinfos *": "allow",
+      "gdb *": "allow",
+      "radare2 *": "allow",
+      "r2 *": "allow",
+      "strace *": "allow",
+      "nm *": "allow",
+      "tcpdump *": "allow",
+      "nmap *": "allow",
+      "*": "ask"
+    }
+  }
+}

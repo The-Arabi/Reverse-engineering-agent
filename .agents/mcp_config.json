@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "re-lab": {
+      "command": "/home/ahmed/repos/reverse-engineering-lab/venv/bin/python",
+      "args": ["-m", "mcp.antigravity_server"],
+      "env": {
+        "PYTHONPATH": "/home/ahmed/repos/reverse-engineering-lab"
+      }
+    }
+  }
+}

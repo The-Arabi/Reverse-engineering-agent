@@ -1,0 +1,19 @@
+# Prometheus configuration for Reverse Engineering Lab
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    project: "reverse-engineering-lab"
+
+scrape_configs:
+  # RE Lab application metrics
+  - job_name: "re-lab-app"
+    static_configs:
+      - targets: ["app:9090"]
+    scrape_interval: 10s
+    metrics_path: "/metrics"
+
+  # Prometheus self-monitoring
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]

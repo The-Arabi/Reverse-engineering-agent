@@ -1,0 +1,105 @@
+# =============================================================================
+# Reverse Engineering Lab — .gitignore
+# =============================================================================
+
+# ---- Secrets & local configuration ----
+.env
+.env.*
+!.env.template
+config/local.yaml
+config/settings_local.py
+config/*.local.*
+
+# ---- Python byte-compiled / cache ----
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.py
+.pyre/
+.pytype/
+.hypothesis/
+.cache/
+
+# ---- Virtual environments ----
+.venv
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ---- Knowledge base & databases (contain sensitive data) ----
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+data/ghidra_projects/
+
+# ---- Logs & runtime artifacts ----
+logs/
+*.log
+startup.log
+
+# ---- Test / coverage reports ----
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# ---- Distribution / packaging ----
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ---- Node / frontend (opencode dashboard) ----
+node_modules/
+.opencode/node_modules/
+.antigravity/node_modules/
+
+# ---- IDE / editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- OS generated ----
+.DS_Store
+Thumbs.db
+
+# ---- Docker ----
+docker-compose.override.yml
+
+# ---- Temporary files ----
+/tmp/*
+~$*
+*.backup
+*.bak
